@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">▦</div>
+      <div>
+        <h1 class="title">Image Gallery</h1>
+        <p class="subtitle">Responsive grid • Hover effects • Lightbox navigation</p>
+      </div>
+    </div>
+
+    <div class="filters" role="toolbar" aria-label="Image categories">
+      <button class="filter-btn is-active" type="button" data-category="all">All</button>
+      <button class="filter-btn" type="button" data-category="nature">Nature</button>
+      <button class="filter-btn" type="button" data-category="city">City</button>
+      <button class="filter-btn" type="button" data-category="people">People</button>
+      <button class="filter-btn" type="button" data-category="architecture">Architecture</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="gallery" id="gallery" aria-label="Image thumbnails"></section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__backdrop" type="button" aria-label="Close lightbox" data-close></button>
+
+    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Image preview">
+      <div class="lightbox__top">
+        <div class="lightbox__meta">
+          <div class="lightbox__title" id="lbTitle">Preview</div>
+          <div class="lightbox__count" id="lbCount"></div>
+        </div>
+        <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      </div>
+
+      <div class="lightbox__body">
+        <button class="lightbox__nav" type="button" data-prev aria-label="Previous image">‹</button>
+
+        <figure class="lightbox__figure">
+          <img id="lbImage" alt="" />
+          <figcaption class="lightbox__caption" id="lbCaption"></figcaption>
+        </figure>
+
+        <button class="lightbox__nav" type="button" data-next aria-label="Next image">›</button>
+      </div>
+
+      <div class="lightbox__hint">Tip: Use <kbd>←</kbd> <kbd>→</kbd> and <kbd>Esc</kbd></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
